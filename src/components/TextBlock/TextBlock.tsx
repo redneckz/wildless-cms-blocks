@@ -1,6 +1,6 @@
 import { FunctionalComponent, h } from "preact";
 import register from "preact-custom-element";
-import style from "./style.scss";
+import "./style.scss";
 
 interface TextBlockProps {
   primary?: string;
@@ -8,9 +8,9 @@ interface TextBlockProps {
 }
 
 export const TextBlock: FunctionalComponent<TextBlockProps> = ({ primary, secondary }) => (
-  <section className={style.text}>
-    <p className={style.text__primary}>{primary || "..."}</p>
-    {secondary && <p className={style.text__secondary}>{secondary}</p>}
+  <section className="text">
+    <p className="text__primary">{primary || "..."}</p>
+    {secondary && <p className="text__secondary">{secondary}</p>}
   </section>
 );
 
