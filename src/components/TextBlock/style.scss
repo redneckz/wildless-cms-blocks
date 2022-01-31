@@ -1,0 +1,19 @@
+.text {
+  &__primary {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    color: rgb(50, 49, 48);
+    font-weight: 400;
+    font-size: 20px;
+  }
+
+  &__secondary {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    color: rgb(96, 94, 92);
+    font-weight: 400;
+    font-size: 14px;
+  }
+}

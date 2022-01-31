@@ -1,0 +1,2 @@
+var e=require("preact");function t(e){return e&&"object"==typeof e&&"default"in e?e:{default:e}}var r=function(t){var r=t.primary,a=t.secondary;return e.h("section",{className:(void 0).text},e.h("p",{className:(void 0).text__primary},r||"..."),a&&e.h("p",{className:(void 0).text__secondary},a))};/*#__PURE__*/t(require("preact-custom-element")).default(r,"w-text-block",["primary","secondary"]),exports.TextBlock=r;
+//# sourceMappingURL=blocks.js.map
