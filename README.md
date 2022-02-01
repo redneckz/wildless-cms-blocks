@@ -1,26 +1,52 @@
 # wildless-cms-blocks
 
 ## CLI Commands
-*   `npm install`: Installs dependencies
 
-*   `npm run dev`: Run a development, HMR server
+- `npm install`: Installs dependencies
 
-*   `npm run serve`: Run a production-like server
+- `npm run dev`: Run a development, HMR server
 
-*   `npm run build`: Production-ready build
+- `npm run serve`: Run a production-like server
 
-*   `npm run lint`: Pass TypeScript files using ESLint
+- `npm run build`: Production-ready build
 
-*   `npm run test`: Run Jest and Enzyme with
-    [`enzyme-adapter-preact-pure`](https://github.com/preactjs/enzyme-adapter-preact-pure) for
-    your tests
+- `npm run lint`: Pass TypeScript files using ESLint
 
+- `npm run test`: Run Jest
 
 ## Usage
 
-https://cdn.jsdelivr.net/gh/redneckz/wildless-cms-blocks/dist/blocks.css
+```html
+<html>
+  <head>
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="https://cdn.jsdelivr.net/gh/redneckz/wildless-cms-blocks/dist/blocks.css"
+    />
+    <script
+      type="text/javascript"
+      src="https://cdn.jsdelivr.net/gh/redneckz/wildless-cms-blocks/dist/blocks.umd.js"
+    ></script>
+  </head>
+  <body>
+    <w-text-block>
+      <span slot="primary">Annie Lindqvist</span>
+      <span slot="secondary">Software Engineer</span>
+    </w-text-block>
+    <w-image-block
+      src="https://static2.sharepointonline.com/files/fabric/office-ui-fabric-react-assets/persona-female.png"
+      alt="Annie Lindqvist"
+    >
+      <span slot="description">Annie Lindqvist</span>
+      <span slot="secondary">Software Engineer</span>
+    </w-image-block>
+  </body>
+</html>
+```
 
-https://cdn.jsdelivr.net/gh/redneckz/wildless-cms-blocks/dist/blocks.umd.js
+To reset CDN`s cache:
 
+https://purge.jsdelivr.net/gh/redneckz/wildless-cms-blocks/dist/blocks.css
 
-For detailed explanation on how things work, checkout the [CLI Readme](https://github.com/developit/preact-cli/blob/master/README.md).
+https://purge.jsdelivr.net/gh/redneckz/wildless-cms-blocks/dist/blocks.umd.js

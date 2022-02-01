@@ -1,26 +1,33 @@
+// Normalization should be defined for each block to minimize duplication caused by Shadow DOM
+@mixin normalize {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
 w-text-block {
   &::part(root) {
-    all: initial;
+    @include normalize;
+    color: #444;
     font-family: "Helvetica Neue", arial, sans-serif;
     font-weight: 400;
-    color: #444;
   }
 
   &::part(primary) {
+    @include normalize;
     overflow: hidden;
     text-overflow: ellipsis;
     white-space: nowrap;
     color: rgb(50, 49, 48);
-    font-weight: 400;
     font-size: 20px;
   }
 
   &::part(secondary) {
+    @include normalize;
     overflow: hidden;
     text-overflow: ellipsis;
     white-space: nowrap;
     color: rgb(96, 94, 92);
-    font-weight: 400;
     font-size: 14px;
   }
 }
