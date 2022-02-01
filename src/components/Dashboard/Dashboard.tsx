@@ -6,7 +6,10 @@ export const Dashboard: FunctionalComponent = () => (
   <div class={style.dashboard}>
     <h1>Dashboard</h1>
     <section>
-      <w-text-block primary="Annie Lindqvist" secondary="Software Engineer" />
+      <w-text-block>
+        <span slot="primary">Annie Lindqvist</span>
+        <span slot="secondary">Software Engineer</span>
+      </w-text-block>
     </section>
   </div>
 );

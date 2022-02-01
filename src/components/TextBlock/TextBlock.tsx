@@ -1,17 +1,17 @@
-import { FunctionalComponent, h } from "preact";
+import { FunctionalComponent, ComponentChildren, h } from "preact";
 import register from "preact-custom-element";
 import "./style.scss";
 
-interface TextBlockProps {
-  primary?: string;
-  secondary?: string;
+export interface TextBlockProps {
+  primary?: ComponentChildren;
+  secondary?: ComponentChildren;
 }
 
 export const TextBlock: FunctionalComponent<TextBlockProps> = ({ primary, secondary }) => (
-  <section className="text">
-    <p className="text__primary">{primary || "..."}</p>
-    {secondary && <p className="text__secondary">{secondary}</p>}
+  <section part="root">
+    <p part="primary">{primary || "..."}</p>
+    {secondary && <p part="secondary">{secondary}</p>}
   </section>
 );
 
-register(TextBlock, "w-text-block", ["primary", "secondary"]);
+register(TextBlock, "w-text-block", [], { shadow: true });

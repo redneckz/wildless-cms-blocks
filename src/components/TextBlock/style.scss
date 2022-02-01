@@ -1,5 +1,12 @@
-.text {
-  &__primary {
+w-text-block {
+  &::part(root) {
+    all: initial;
+    font-family: "Helvetica Neue", arial, sans-serif;
+    font-weight: 400;
+    color: #444;
+  }
+
+  &::part(primary) {
     overflow: hidden;
     text-overflow: ellipsis;
     white-space: nowrap;
@@ -8,7 +15,7 @@
     font-size: 20px;
   }
 
-  &__secondary {
+  &::part(secondary) {
     overflow: hidden;
     text-overflow: ellipsis;
     white-space: nowrap;
