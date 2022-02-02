@@ -15,17 +15,26 @@ export type PersonaProps =
     }
   | PersonaData;
 
-export const Persona: FunctionalComponent<PersonaProps> = (props) =>
-  "data" in props ? (
-    <w-image-block src={props.data.photo} alt={props.data.name}>
-      <span slot="description">{props.data.name}</span>
-      <span slot="secondary">{props.data.role}</span>
-    </w-image-block>
-  ) : (
-    <w-image-block src={props.photo} alt={props.name}>
-      <span slot="description">{props.name}</span>
-      <span slot="secondary">{props.role}</span>
-    </w-image-block>
+export const Persona: FunctionalComponent<PersonaProps> = (props) => {
+  return (
+    <w-image-block
+      data={
+        "data" in props
+          ? {
+              src: props.data.photo,
+              alt: props.data.name,
+              description: props.data.name,
+              secondary: props.data.role,
+            }
+          : {
+              src: props.photo,
+              alt: props.name,
+              description: props.name,
+              secondary: props.role,
+            }
+      }
+    />
   );
+};
 
 register(Persona, "w-persona", ["data", "photo", "name", "role"]);
