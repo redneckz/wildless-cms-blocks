@@ -1,16 +1,27 @@
 import { FunctionalComponent, h } from "preact";
 import { useMemo } from "preact/hooks";
 import type { TextBlockData } from "../TextBlock";
+import type { PersonaData } from "../Persona";
 import style from "./style.scss";
 
 require("../TextBlock");
 require("../ImageBlock");
+require("../Persona");
 
 export const Dashboard: FunctionalComponent = () => {
   const textBlockData: TextBlockData = useMemo(
     () => ({
       primary: "Annie Lindqvist",
       secondary: "Software Engineer",
+    }),
+    []
+  );
+  const personaData: PersonaData = useMemo(
+    () => ({
+      photo:
+        "https://static2.sharepointonline.com/files/fabric/office-ui-fabric-react-assets/persona-male.png",
+      name: "Ted Randall",
+      role: "Project Manager",
     }),
     []
   );
@@ -30,6 +41,10 @@ export const Dashboard: FunctionalComponent = () => {
           <span slot="description">Annie Lindqvist</span>
           <span slot="secondary">Software Engineer</span>
         </w-image-block>
+      </section>
+      <section>
+        <h2>Persona</h2>
+        <w-persona data={personaData} />
       </section>
     </div>
   );

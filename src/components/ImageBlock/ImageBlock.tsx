@@ -1,4 +1,4 @@
-import { FunctionalComponent, ComponentChildren, JSX, h } from "preact";
+import { FunctionalComponent, ComponentChildren, JSX, h, Fragment } from "preact";
 import register from "preact-custom-element";
 import { html } from "../../utils/html";
 import "./style.scss";
@@ -10,13 +10,16 @@ export interface ImageBlockData {
   secondary?: string;
 }
 
-export interface ImageBlockProps {
-  data?: ImageBlockData;
-  src: string;
-  alt: string;
-  description?: ComponentChildren;
-  secondary?: ComponentChildren;
-}
+export type ImageBlockProps =
+  | {
+      data: ImageBlockData;
+    }
+  | {
+      src: string;
+      alt: string;
+      description?: ComponentChildren;
+      secondary?: ComponentChildren;
+    };
 
 // TODO Check out https://github.com/callstack/linaria to implement CSS-in-JS approach with zero runtime
 const imgStyle: JSX.CSSProperties = {
@@ -27,27 +30,26 @@ const imgStyle: JSX.CSSProperties = {
   "object-fit": "cover",
 };
 
-export const ImageBlock: FunctionalComponent<ImageBlockProps> = ({
-  data,
-  src,
-  alt,
-  description,
-  secondary,
-}) => (
+export const ImageBlock: FunctionalComponent<ImageBlockProps> = (props) => (
   <section part="root">
     <div part="image">
-      <img src={data?.src || src} alt={data?.alt || alt} style={imgStyle} />
+      <img
+        src={"data" in props ? props.data.src : props.src}
+        alt={"data" in props ? props.data.alt : props.alt}
+        style={imgStyle}
+      />
     </div>
     <div part="text">
-      {(data?.description || description) && (
-        <p part="description" {...html(data?.description)}>
-          {description}
-        </p>
-      )}
-      {(data?.secondary || secondary) && (
-        <p part="secondary" {...html(data?.secondary)}>
-          {secondary}
-        </p>
+      {"data" in props ? (
+        <>
+          <p part="description" {...html(props.data.description)} />
+          <p part="secondary" {...html(props.data.secondary)} />
+        </>
+      ) : (
+        <>
+          <p part="description">{props.description}</p>
+          <p part="secondary">{props.secondary}</p>
+        </>
       )}
     </div>
   </section>

@@ -6,11 +6,12 @@ export interface ImageBlockData {
     description?: string;
     secondary?: string;
 }
-export interface ImageBlockProps {
-    data?: ImageBlockData;
+export declare type ImageBlockProps = {
+    data: ImageBlockData;
+} | {
     src: string;
     alt: string;
     description?: ComponentChildren;
     secondary?: ComponentChildren;
-}
+};
 export declare const ImageBlock: FunctionalComponent<ImageBlockProps>;
