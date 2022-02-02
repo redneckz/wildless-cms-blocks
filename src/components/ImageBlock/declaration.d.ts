@@ -1,10 +1,8 @@
 namespace preact {
   namespace JSX {
+    type ImageBlockProps = import("./ImageBlock").ImageBlockProps;
     interface IntrinsicElements {
-      "w-image-block": preact.JSX.HTMLAttributes & {
-        src: string;
-        alt: string;
-      };
+      "w-image-block": Omit<preact.JSX.HTMLAttributes, keyof ImageBlockProps> & ImageBlockProps;
     }
   }
 }

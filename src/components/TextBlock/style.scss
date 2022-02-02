@@ -9,7 +9,7 @@ w-text-block {
   &::part(root) {
     @include normalize;
     color: #444;
-    font-family: "Helvetica Neue", arial, sans-serif;
+    font-family: "Segoe UI", Roboto, "Helvetica Neue", arial, sans-serif;
     font-weight: 400;
   }
 
