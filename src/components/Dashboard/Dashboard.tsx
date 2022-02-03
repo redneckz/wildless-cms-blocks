@@ -1,12 +1,13 @@
+/* eslint-disable no-duplicate-imports */
 import { FunctionalComponent, h } from "preact";
 import { useMemo } from "preact/hooks";
-import type { TextBlockData } from "../TextBlock";
+import "../ImageBlock";
+import "../Persona";
 import type { PersonaData } from "../Persona";
+import "../TextBlock";
+import type { TextBlockData } from "../TextBlock";
 import style from "./style.scss";
 
-require("../TextBlock");
-require("../ImageBlock");
-require("../Persona");
 
 export const Dashboard: FunctionalComponent = () => {
   const textBlockData: TextBlockData = useMemo(

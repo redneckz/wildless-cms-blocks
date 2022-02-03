@@ -1,7 +1,6 @@
 import { FunctionalComponent, h } from "preact";
 import register from "preact-custom-element";
-
-require("../ImageBlock");
+import "../ImageBlock";
 
 export interface PersonaData {
   photo: string;

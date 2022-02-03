@@ -22,11 +22,11 @@
     <link
       rel="stylesheet"
       type="text/css"
-      href="https://cdn.jsdelivr.net/gh/redneckz/wildless-cms-blocks/dist/blocks.css"
+      href="https://cdn.jsdelivr.net/gh/redneckz/wildless-cms-blocks@main/dist/blocks.css"
     />
     <script
       type="text/javascript"
-      src="https://cdn.jsdelivr.net/gh/redneckz/wildless-cms-blocks/dist/blocks.umd.js"
+      src="https://cdn.jsdelivr.net/gh/redneckz/wildless-cms-blocks@main/dist/blocks.umd.js"
     ></script>
   </head>
   <body>

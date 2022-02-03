@@ -1,4 +1,5 @@
 import { FunctionalComponent } from "preact";
+import "../ImageBlock";
 export interface PersonaData {
     photo: string;
     name: string;
